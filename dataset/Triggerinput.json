@@ -1,0 +1,20 @@
+{
+	"name": "Triggerinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "id1.txt",
+				"folderPath": "scheduletrigger",
+				"container": "trigger"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

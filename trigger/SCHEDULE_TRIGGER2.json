@@ -1,0 +1,30 @@
+{
+	"name": "SCHEDULE_TRIGGER2",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "SCHEDULETRIGGER",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "COPY_DIFFERENTSCHEMA",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2022-08-19T00:35:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

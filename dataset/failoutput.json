@@ -1,0 +1,19 @@
+{
+	"name": "failoutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "output",
+				"container": "fail"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

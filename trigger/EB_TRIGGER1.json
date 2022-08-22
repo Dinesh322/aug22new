@@ -1,0 +1,25 @@
+{
+	"name": "EB_TRIGGER1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "EVENTBASEDTRIGGER1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/trigger/blobs/eventtrigger",
+			"blobPathEndsWith": ".txt",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/d9c2894b-99fa-4069-972d-e23040af3c3e/resourceGroups/Demo-adfjul22/providers/Microsoft.Storage/storageAccounts/stgdemojul22",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

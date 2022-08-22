@@ -1,0 +1,19 @@
+{
+	"name": "switchinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "input",
+				"container": "switch"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

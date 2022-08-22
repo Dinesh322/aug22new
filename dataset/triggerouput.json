@@ -1,0 +1,19 @@
+{
+	"name": "triggerouput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "scheduleouput",
+				"container": "trigger"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

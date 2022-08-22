@@ -1,0 +1,29 @@
+{
+	"name": "EBTRIGGER_PARAMETER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "eventtrigger_parameter",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"fileName": "@triggerBody().fileName",
+					"FolderName": "@triggerBody().folderName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/trigger/blobs/ebparameter/",
+			"blobPathEndsWith": "*txt",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/d9c2894b-99fa-4069-972d-e23040af3c3e/resourceGroups/Demo-adfjul22/providers/Microsoft.Storage/storageAccounts/stgdemojul22",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

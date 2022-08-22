@@ -1,0 +1,27 @@
+{
+	"name": "ifconditionoutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"outputfolderpath": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().outputfolderpath",
+					"type": "Expression"
+				},
+				"container": "ifcondition"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

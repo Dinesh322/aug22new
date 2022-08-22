@@ -1,0 +1,9 @@
+{
+	"name": "demolul22",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8ebca269-d407-408b-9b64-d5ca118d2d85",
+		"tenantId": "820a2627-2c56-460a-97e2-78cfcede783a"
+	}
+}

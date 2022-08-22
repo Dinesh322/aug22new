@@ -1,0 +1,19 @@
+{
+	"name": "filterinput2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "input",
+				"container": "filter"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

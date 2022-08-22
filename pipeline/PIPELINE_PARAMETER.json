@@ -1,0 +1,118 @@
+{
+	"name": "PIPELINE_PARAMETER",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_Parameter1",
+						"type": "DatasetReference",
+						"parameters": {
+							"serverName": {
+								"value": "@pipeline().parameters.serverName",
+								"type": "Expression"
+							},
+							"dbName": {
+								"value": "@pipeline().parameters.dbName",
+								"type": "Expression"
+							},
+							"password": {
+								"value": "@pipeline().parameters.password",
+								"type": "Expression"
+							},
+							"tableName": {
+								"value": "@pipeline().parameters.inputTableName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Parameter1",
+						"type": "DatasetReference",
+						"parameters": {
+							"serverName": {
+								"value": "@pipeline().parameters.outputserverName",
+								"type": "Expression"
+							},
+							"dbName": {
+								"value": "@pipeline().parameters.outputdbName",
+								"type": "Expression"
+							},
+							"password": {
+								"value": "@pipeline().parameters.outputpassword",
+								"type": "Expression"
+							},
+							"tableName": {
+								"value": "@pipeline().parameters.outputTableName",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"serverName": {
+				"type": "string"
+			},
+			"dbName": {
+				"type": "string"
+			},
+			"password": {
+				"type": "string"
+			},
+			"outputserverName": {
+				"type": "string"
+			},
+			"outputdbName": {
+				"type": "string"
+			},
+			"outputpassword": {
+				"type": "string"
+			},
+			"inputTableName": {
+				"type": "string"
+			},
+			"outputTableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-08-16T05:28:19Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
