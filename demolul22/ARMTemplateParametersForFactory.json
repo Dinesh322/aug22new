@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "demolul22"
+		},
+		"LS_AZURESQL_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_connectionString": {
+			"value": ""
+		},
+		"LS_PARAMETER_connectionString": {
+			"value": ""
+		},
+		"EBTRIGGER_PARAMETER_properties_eventtrigger_parameter_parameters_fileName": {
+			"value": "@triggerBody().fileName"
+		},
+		"EBTRIGGER_PARAMETER_properties_eventtrigger_parameter_parameters_FolderName": {
+			"value": "@triggerBody().folderName"
+		},
+		"EBTRIGGER_PARAMETER_properties_typeProperties_scope": {
+			"value": "/subscriptions/d9c2894b-99fa-4069-972d-e23040af3c3e/resourceGroups/Demo-adfjul22/providers/Microsoft.Storage/storageAccounts/stgdemojul22"
+		},
+		"EB_TRIGGER1_properties_typeProperties_scope": {
+			"value": "/subscriptions/d9c2894b-99fa-4069-972d-e23040af3c3e/resourceGroups/Demo-adfjul22/providers/Microsoft.Storage/storageAccounts/stgdemojul22"
+		},
+		"TUMBLINGTRIGGER_properties_pipeline_parameters_startDate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TUMBLINGTRIGGER_properties_pipeline_parameters_endDate": {
+			"value": "@trigger().outputs.windowEndTime"
+		}
+	}
+}
